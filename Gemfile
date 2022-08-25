@@ -73,3 +73,6 @@ end
 # Bootstrap4 and jQuery
   gem 'bootstrap', '~> 4.3.1'
   gem 'jquery-rails'
+  
+# device
+gem 'devise', ' ~> 4.2'
