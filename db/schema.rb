@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_25_100930) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_27_105034) do
+  create_table "goals", force: :cascade do |t|
+    t.string "title"
+    t.integer "uset_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["uset_id"], name: "index_goals_on_uset_id"
+  end
+
+  create_table "todos", force: :cascade do |t|
+    t.string "content"
+    t.integer "goal_id", null: false
+    t.integer "position"
+    t.boolean "done", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["goal_id"], name: "index_todos_on_goal_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -23,4 +41,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_100930) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "goals", "usets"
+  add_foreign_key "todos", "goals"
 end
