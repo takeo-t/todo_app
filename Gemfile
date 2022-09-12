@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "2.6.3"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 5.2.3"
+gem "rails", "5.2.3"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 #gem "sprockets-rails"
@@ -13,7 +13,7 @@ gem "rails", "~> 5.2.3"
 gem "sqlite3"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 3.11"
+gem "puma", "3.11"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
